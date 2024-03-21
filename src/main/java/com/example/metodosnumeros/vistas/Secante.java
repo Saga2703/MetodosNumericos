@@ -51,6 +51,22 @@ private Button btnSalir;
         });
     }
 
+    private Function<Double, Double> buildFunction(String functionText) {
+        return x -> {
+            try {
+                // Utilizamos el script engine de Java para evaluar la expresión matemática
+                ScriptEngineManager manager = new ScriptEngineManager();
+                ScriptEngine engine = manager.getEngineByName("JavaScript");
+                engine.eval("function f(x) { return " + functionText + "; }");
+                Invocable inv = (Invocable) engine;
+                return (double) inv.invokeFunction("f", x);
+            } catch (Exception e) {
+                throw new IllegalArgumentException("La función ingresada no es válida.");
+            }
+        };
+    }
+
+
     public static void secante(Function<Double, Double> f, double x0, double x1, double errorMaximoPorcentual, Label resultLabel) {
         resultLabel.setText("Iteración\tXi-1\tXi\tF(Xi-1)\t\tF(Xi)\t\tXi+1\t\tError\n");
 
