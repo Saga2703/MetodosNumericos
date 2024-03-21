@@ -1,0 +1,21 @@
+.root{
+    -fx-background-image:  url('https://www.tecnm.mx/images/tecnm_virtual/tecnm.png'),url('https://www.natacionmexico.com/portal/images/eventlist/venues/itc_logo_1294976207.gif');
+    -fx-background-size:35%,150px;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: bottom right,top left;
+}
+
+#lblT{
+    -fx-font-size: 25px;
+    -fx-text-fill: blue;
+    -fx-font-weight: bold;
+    -fx-padding: 20;
+}
+#lbl0{
+    -fx-font-size: 15;
+    -fx-text-fill: purple;
+    -fx-padding: 20;
+}
+.label{
+    -fx-padding: 5;
+}
