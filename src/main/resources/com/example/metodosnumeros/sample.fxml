@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<VBox alignment="CENTER" spacing="10" xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.metodosnumeros.components.Controller">
+    <Label text="Ingrese el sistema de ecuaciones (coeficientes separados por espacios, una ecuación por línea):" />
+    <TextArea fx:id="equationsInput" prefHeight="100" />
+    <Button text="Resolver" onAction="#solveEquations" />
+    <TextArea fx:id="iterationsArea" prefHeight="100" editable="false" />
+    <TextField fx:id="errorInput" />
+</VBox>
