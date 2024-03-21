@@ -8,6 +8,12 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import java.util.function.Function;
+import javax.script.Invocable;
+import javax.script.ScriptEngine;
+import javax.script.ScriptEngineManager;
+import javax.script.ScriptException;
+import java.util.function.Function;
+
 
 public class Secante extends Stage {
 private Button btnSalir;
@@ -15,6 +21,10 @@ private Button btnSalir;
         GridPane grid = new GridPane();
         grid.setHgap(10);
         grid.setVgap(10);
+
+        Label functionLabel = new Label("Función (e.g., x^4 - 2*x^3 - 12*x^2 + 16*x - 40):");
+        TextField functionField = new TextField();
+        grid.addRow(3, functionLabel, functionField);
 
         Label errorLabel = new Label("Valor máximo del error porcentual:");
         TextField errorField = new TextField();
@@ -30,7 +40,7 @@ private Button btnSalir;
 
         Label resultLabel = new Label();
 
-        grid.add(resultLabel, 0, 4, 2, 1);
+        grid.add(resultLabel, 0, 5, 2, 1);
 
         this.setScene(new Scene(grid, 600, 600));
         this.setTitle("Método de la Secante");
@@ -51,19 +61,12 @@ private Button btnSalir;
         });
     }
 
-    private Function<Double, Double> buildFunction(String functionText) {
-        return x -> {
-            try {
-                // Utilizamos el script engine de Java para evaluar la expresión matemática
-                ScriptEngineManager manager = new ScriptEngineManager();
-                ScriptEngine engine = manager.getEngineByName("JavaScript");
-                engine.eval("function f(x) { return " + functionText + "; }");
-                Invocable inv = (Invocable) engine;
-                return (double) inv.invokeFunction("f", x);
-            } catch (Exception e) {
-                throw new IllegalArgumentException("La función ingresada no es válida.");
-            }
-        };
+    private Function<Double, Double> evalFunction(String functionString) throws ScriptException {
+        ScriptEngineManager manager = new ScriptEngineManager();
+        ScriptEngine engine = manager.getEngineByName("js");
+        String script = "function f(x) { return " + functionString + "; }";
+        engine.eval(script);
+        return (Function<Double, Double>) engine.eval("f");
     }
 
 
