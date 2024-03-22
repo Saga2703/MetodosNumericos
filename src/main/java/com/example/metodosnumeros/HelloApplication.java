@@ -2,10 +2,8 @@ package com.example.metodosnumeros;
 
 import com.example.metodosnumeros.vistas.Biseccion;
 import com.example.metodosnumeros.vistas.GaussJordan;
-import com.example.metodosnumeros.vistas.GaussSeidel;
 import com.example.metodosnumeros.vistas.Secante;
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;

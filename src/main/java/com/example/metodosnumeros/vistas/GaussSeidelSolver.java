@@ -1,4 +1,4 @@
-package com.example.metodosnumeros.components;
+package com.example.metodosnumeros.vistas;
 import java.util.Arrays;
 
 public class GaussSeidelSolver {

@@ -1,4 +1,4 @@
-package com.example.metodosnumeros.components;
+package com.example.metodosnumeros;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.TextArea;
