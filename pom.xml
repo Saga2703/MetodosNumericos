@@ -16,6 +16,11 @@
 
     <dependencies>
         <dependency>
+            <groupId>net.objecthunter</groupId>
+            <artifactId>exp4j</artifactId>
+            <version>0.4.8</version> <!-- La versión puede variar -->
+        </dependency>
+        <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>
             <version>20.0.1</version>
