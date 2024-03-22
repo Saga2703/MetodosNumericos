@@ -39,11 +39,11 @@ public class HelloApplication extends Application {
         lblT.setId("lblT");
         lbl0=new Label("Integrantes");
         lbl0.setId("lbl0");
-        lbl1=new Label("Alejandro");
-        lbl2=new Label("Uriel Alex");
-        lbl3=new Label("Ricardo");
-        lbl4=new Label("Julian");
-        lbl5=new Label("Emmanuel ");
+        lbl1=new Label("Enrique Alejandro Paredes Pati;o");
+        lbl2=new Label("Uriel Alejandro Martinez Martinez");
+        lbl3=new Label("Bryan Ricardo Corona Juárez");
+        lbl4=new Label("Julian Nuñez");
+        lbl5=new Label("Emmanuel Blanco Paloblanco");
         btnSig = new Button("Siguiente");
         vContenedor1 = new VBox(lbl0,lbl1,lbl2,lbl3,lbl4,lbl5);
         vContenedor1.setAlignment(Pos.BOTTOM_CENTER);
