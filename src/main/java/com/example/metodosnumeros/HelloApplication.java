@@ -52,7 +52,7 @@ public class HelloApplication extends Application {
 
         escena = new Scene(vContenedor2,500,500);
         escena.getStylesheets()
-                .add(getClass().getResource("/estilos/principal.css").toString());
+               .add(getClass().getResource("/estilos/principal.css").toString());
     }
 
     public static void main(String[] args) {
